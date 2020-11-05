@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const Error = ({mensaje}) => (
-<p className="alert alert-danger error">{mensaje}</p>
- )
+const Error = ({ mensaje }) => (
+  <p className="alert alert-danger error">{mensaje}</p>
+);
 export default Error;
