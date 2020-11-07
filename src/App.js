@@ -25,7 +25,7 @@ function App() {
       const presupuestoRestanto = gasto - restante.cantidad;
       setGasto(presupuestoRestanto);
     }
-  }, [restante]);
+  }, [restante, crearGasto,gasto,gastos]);
 
   
 

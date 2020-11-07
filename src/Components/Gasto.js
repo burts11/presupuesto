@@ -5,7 +5,7 @@ const Gasto = ({ gasto }) => (
     <p>
       {gasto.nombre}
 
-      <span className="gasto">${gasto.cantidad}</span>
+      <span className="gasto">{Intl.NumberFormat("de-DE").format(gasto.cantidad)}€</span>
     </p>
   </li>
 );

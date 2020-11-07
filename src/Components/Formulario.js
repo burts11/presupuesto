@@ -17,7 +17,7 @@ const Formulario = ({ setCrearGasto, setRestante }) => {
       return;
     }
     setError(false);
-
+    
     //construir gasto
     const gasto = {
       nombre,
