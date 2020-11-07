@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Error from "./Error";
 import shortid from "shortid";
 
-const Formulario = ({ presupuesto }) => {
+const Formulario = ({ setCrearGasto, setRestante }) => {
   const [nombre, setNombre] = useState("");
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
@@ -13,19 +13,25 @@ const Formulario = ({ presupuesto }) => {
     //validar
     if (cantidad < 1 || nombre.trim() === "") {
       setError(true);
+
       return;
     }
     setError(false);
+
     //construir gasto
     const gasto = {
       nombre,
       cantidad,
       id: shortid.generate(),
     };
-    console.log(gasto)
-    //pasar gasto al componente principal
 
+    //pasar gasto al componente principal
+    setRestante(gasto);
+    setCrearGasto(true);
     //resetear form
+    e.target.reset();
+    setCantidad(0);
+    setNombre("");
   };
 
   return (
@@ -41,13 +47,11 @@ const Formulario = ({ presupuesto }) => {
           type="text"
           className="u-full-width"
           placeholder="Ejemplo Transporte"
-          value={nombre}
           onChange={(e) => setNombre(e.target.value)}
         />
       </div>
       <div className="campo">
         <label>Importe gasto</label>
-
         <input
           type="text"
           className="u-full-width"
