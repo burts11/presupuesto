@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Error from "./Error";
 import shortid from "shortid";
+import PropTypes from "prop-types";
 
 const Formulario = ({ setCrearGasto, setRestante }) => {
   const [nombre, setNombre] = useState("");
@@ -17,7 +18,7 @@ const Formulario = ({ setCrearGasto, setRestante }) => {
       return;
     }
     setError(false);
-    
+
     //construir gasto
     const gasto = {
       nombre,
@@ -68,5 +69,8 @@ const Formulario = ({ setCrearGasto, setRestante }) => {
     </form>
   );
 };
-
+Formulario.propTypes = {
+  setCrearGasto: PropTypes.func.isRequired,
+  setRestante: PropTypes.func.isRequired,
+};
 export default Formulario;

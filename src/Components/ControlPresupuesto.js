@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import { revisarPresupuesto } from "../helpers";
+import PropTypes from "prop-types";
 
 const ControlPresupuesto = ({ presupuesto, gasto }) => {
-
   //Poner punto entre los numeros
-  const punto = id => {
+  const punto = (id) => {
     const cambio = Intl.NumberFormat("de-DE").format(id);
     return cambio;
   };
@@ -20,5 +20,8 @@ const ControlPresupuesto = ({ presupuesto, gasto }) => {
     </Fragment>
   );
 };
-
+ControlPresupuesto.propTypes = {
+  gasto: PropTypes.number.isRequired,
+  presupuesto: PropTypes.number.isRequired,
+};
 export default ControlPresupuesto;

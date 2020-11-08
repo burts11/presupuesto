@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Error from "./Error"
+import PropTypes from "prop-types";
 
 const Pregunta = ({setPresupuesto,setGasto,setPregunta}) => {
   //Crear el useState
@@ -46,4 +47,9 @@ const Pregunta = ({setPresupuesto,setGasto,setPregunta}) => {
   );
 };
 
+Pregunta.propTypes = {
+  setPresupuesto: PropTypes.func.isRequired,
+  setGasto: PropTypes.func.isRequired,
+  setPregunta: PropTypes.func.isRequired,
+};
 export default Pregunta;
